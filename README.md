@@ -51,9 +51,8 @@ Sistem tidak menggunakan login/JWT, melainkan validasi manual melalui **Header H
 * Setiap kali User meminjam buku, sistem **wajib** menerima data lokasi (`latitude` & `longitude`) dari Request Body.
 * Data koordinat ini disimpan ke tabel `BorrowLogs` sebagai bukti lokasi peminjaman.
 
-___________________________________________________________________________________________________________
+
 ## Bukti Eksekusi Postman
-___________________________________________________________________________________________________________
 ### POST Book
 <img width="1920" height="1080" alt="Screenshot (660)" src="https://github.com/user-attachments/assets/922677aa-1ac6-4687-be39-d5b002060c33" />
 <img width="1920" height="1080" alt="Screenshot (661)" src="https://github.com/user-attachments/assets/0272bb35-5cc8-47ba-bbab-2af2db156fb5" />
@@ -70,5 +69,6 @@ ________________________________________________________________________________
 <img width="1920" height="1080" alt="Screenshot (670)" src="https://github.com/user-attachments/assets/8cf9a314-45a5-40c1-820a-a5d73a46bbb3" />
 
 ### DELETE Book
-<img width="1920" height="1080" alt="Screenshot (672)" src="https://github.com/user-attachments/assets/08adfcb8-a83f-4ffe-83d9-b8b279c869db" />
 <img width="1920" height="1080" alt="Screenshot (671)" src="https://github.com/user-attachments/assets/1ef592c3-7938-4050-bd0a-2f01df6c1794" />
+* Bukti jika bukan admin, maka request akan ditolak.
+  <img width="1920" height="1080" alt="Screenshot (672)" src="https://github.com/user-attachments/assets/08adfcb8-a83f-4ffe-83d9-b8b279c869db" />
