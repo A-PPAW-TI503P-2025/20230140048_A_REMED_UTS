@@ -29,6 +29,25 @@ app.post("/api/books", checkRole("admin"), async (req, res) => {
   }
 });
 
+app.put("/api/books/:id", checkRole("admin"), async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { title, author, stock } = req.body;
+
+    const book = await Book.findByPk(id);
+
+    if (!book) {
+      return res.status(404).json({ message: "Book not found" });
+    }
+
+    await book.update({ title, author, stock });
+
+    res.json({ message: "Book updated successfully", data: book });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.post("/api/borrow", checkRole("user"), async (req, res) => {
   const userId = req.headers["x-user-id"];
   const { bookId, latitude, longitude } = req.body;
